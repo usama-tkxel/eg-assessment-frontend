@@ -1,0 +1,107 @@
+@mixin background-position {
+  position: absolute;
+  right: -17%;
+  top: 2px;
+  z-index: -1;
+}
+@mixin Modal-Title {
+  font-family: 'Inter SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+}
+@mixin Heading-lg {
+  font-family: 'Inter SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 24px;
+}
+@mixin Heading-lg-medium {
+  font-family: 'Inter Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+}
+@mixin Heading-sm {
+  font-family: 'Inter SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+@mixin Heading-md {
+  font-family: 'Inter SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}
+@mixin text-md {
+  font-family: 'Inter SemiBold';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+@mixin text-md-Regular {
+  font-family: 'Inter Regular';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+@mixin text-lg {
+  font-family: 'Inter Regular';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+@mixin text-sm {
+  font-family: 'Inter Regular';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+}
+@mixin dot {
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+}
+@mixin text-sm-lh18 {
+  font-family: 'Inter Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+@mixin place-holder-styles {
+  font-family: 'Inter Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+@mixin text-md-lh24 {
+  font-family: 'Inter SemiBold';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+@mixin modal-sytles {
+  background: #ffffff;
+  box-shadow:
+    0px 20px 24px -4px rgba(16, 24, 40, 0.1),
+    0px 8px 8px -4px rgba(16, 24, 40, 0.04);
+  border-radius: 12px;
+}
+@mixin background-styles-landing-Page {
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -3px;
+}

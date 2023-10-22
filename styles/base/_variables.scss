@@ -1,0 +1,196 @@
+// fonts variables-----
+
+$ManropeRegular: 'Manrope-Regular';
+$ManropeMedium: 'Manrope-Medium';
+$ManropeSemiBold: 'Manrope-SemiBold';
+
+$InterRegular: 'Inter-Regular';
+$InterMedium: 'Inter-Medium';
+$InterBold: 'Inter-Bold';
+$InterSemiBold: 'Inter-SemiBold';
+
+// colors----
+
+$black900: #111928;
+$black100: #f2f4f7;
+$white: #ffffff;
+$black600: #4b5563;
+$gray500: #667085;
+$gray900: #101828;
+$black500: #6b7280;
+$black200: #e5e7eb;
+$black50: #f9fafb;
+$black800: #1f2a37;
+$black300: #d1d5db;
+$gray700: #344054;
+$black400: #9ca3af;
+
+$sky_blue: #61dafb;
+$yellowish: rgb(204, 204, 49);
+$white: white;
+$yellow: rgb(226, 192, 37);
+$sky_blue_light: rgb(80, 146, 164);
+$orange: rgb(244, 127, 77);
+$moongia_green: rgb(134, 166, 121);
+$orange_shade: rgb(244, 128, 78);
+$dark_grey: #d1d1d1;
+$text_color: #666766;
+
+$colors: (
+  'Articles-bg': #f4f3ff,
+  'Description-bg': #eff8ff,
+  'Email-bg': rgba(64, 169, 165, 0.08),
+  'Captions-bg': #fdf2fa,
+  'PressRelease-bg': #f9f5ff,
+  'Letters-bg': #eef4ff,
+  'Pitches-bg': #f8f9fc,
+  'b-charcoal': #282c34,
+  'black': #000000,
+  'list_bg': #f2f4f7,
+  'white': #ffffff,
+  's-blue': #61dafb,
+  'link-blue': #6941c6,
+  'yellowish-clr': rgb(204, 204, 49),
+  'g-grey': rgb(134, 161, 121),
+  'white-clr': #fff,
+  'g-black': rgb(83, 87, 90),
+  'b-grey': rgb(47, 47, 46),
+  'yellow-clr': rgb(226, 192, 37),
+  'org': rgb(244, 127, 77),
+  'm-green': rgb(134, 166, 121),
+  'org-shade': rgb(244, 128, 78),
+  'l-grey': #e4e7ec,
+  'pri-pink': #dd2590,
+  'pri-blue': #2e90fa,
+  'd-grey': #101828,
+  'd-grey-600': #475467,
+  'd-grey-700': #344054,
+  'd-grey-800': #2c3e50,
+  'grey-800': #1d2939,
+  'light-grey': #667085,
+  'd-color': #646464e8,
+  'input-color': #c9cacc,
+  'sb-dark': #4c86a0,
+  'error': #b42318,
+  'sb-light': #4c86a0,
+  'red-dark': #aa182c,
+  'green-clr': #85a079,
+  'dark-grey': #3d3935,
+  'logo_primary_color': #7f56d9,
+  'thead': #f9fafb,
+);
+
+@function font_clr($fs_color) {
+  @return map-get($colors, $fs_color);
+}
+
+@each $color, $val in $colors {
+  .clr-#{$color} {
+    color: $val !important;
+  }
+  .bg-clr-#{$color} {
+    background-color: $val !important;
+  }
+  .bg-#{$color} {
+    background: $val !important;
+  }
+}
+
+$secondary_clr: (
+  'dark-red': #aa182c,
+  'red-devil': #820012,
+  'dark-orng': #df854f,
+  'lt-grey': #9d9c9a,
+  'lt-blue': #a6c2cf,
+  'lt-green': #c2cebc,
+  'murcury-clr': #e1e1e1,
+  'sec-white': #fff,
+  'text-grey': #767676,
+);
+
+@function Sec_clr($Sec_clr) {
+  @return map-get($secondary_clr, $Sec_clr);
+}
+@each $sec_clr, $val in $secondary_clr {
+  .clr-#{$sec_clr} {
+    color: $val !important;
+  }
+  .bg-clr-#{$sec_clr} {
+    background-color: $val !important;
+  }
+}
+$primary_clr: (
+  'lt-black': #3d3935,
+  'cod-grey': #191918,
+  'dark-blue': #4c86a0,
+  'chathams-blue': #155a79,
+  'green-grey': #85a079,
+  'highland-green': #759069,
+  'chalet-green': #4a653d,
+);
+@function Pri_clr($Pri_clr) {
+  @return map-get($primary_clr, $Pri_clr);
+}
+@each $pri_clr, $val in $primary_clr {
+  .clr-#{$pri_clr} {
+    color: $val !important;
+  }
+  .bg-clr-#{$pri_clr} {
+    background-color: $val !important;
+  }
+}
+
+.bg-white {
+  background-color: $white;
+}
+.fs30 {
+  font-size: 1.875rem;
+}
+.color-sky-blue-light {
+  color: $sky_blue_light !important;
+}
+.bccolor-sky-blue-light,
+.bccolor-sky-blue-light:hover {
+  border-color: $sky_blue_light !important;
+}
+.color-yellow {
+  color: $yellow !important;
+}
+.color-white {
+  color: $white !important;
+}
+
+$background_Clrs: (
+  'bg-white': #ffffff,
+  'bg-black': #000000,
+  'lg-brown':
+    linear-gradient(
+      250.09deg,
+      rgba(234, 204, 173, 0.49) 12.47%,
+      rgba(243, 220, 196, 0.12) 52.02%,
+      rgba(232, 195, 158, 0.37) 96.84%
+    ),
+  'lg-pink':
+    linear-gradient(
+      250.09deg,
+      rgba(246, 112, 199, 0.17) 12.47%,
+      rgba(220, 155, 243, 0.08) 52.02%,
+      rgba(198, 86, 217, 0.08) 96.84%
+    ),
+  'lg-blue':
+    linear-gradient(
+      250.09deg,
+      #b9dbff 12.47%,
+      rgba(224, 234, 255, 0.27) 52.02%,
+      rgba(184, 206, 251, 0.28) 96.84%
+    ),
+  'lt-grey': #9d9c9a,
+  'lt-blue': #a6c2cf,
+  'lt-green': #c2cebc,
+  'murcury-clr': #e1e1e1,
+  'bg-grey': #767676,
+);
+
+@function get_box_Shadow($clr_pri) {
+  @return map-get($box_Shadow, $clr_pri);
+}

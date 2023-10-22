@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Manrope';
+  src:
+    local('Manrope'),
+    url('./Fonts/Monrope/Manrope.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src:
+    local('Inter'),
+    url('./Fonts/Inter/Inter.ttf') format('truetype');
+}
+.static-select .css-1nmdiq5-menu {
+  position: static !important;
+}

@@ -1,0 +1,42 @@
+.input-blue-outline {
+  border: 1px solid #4345db !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+.float-label {
+  margin-top: 11px !important;
+  margin-left: 10px !important;
+  color: #4345db;
+}
+.custom-classes {
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+.custom-classes:focus {
+  border: 1px solid #4345db;
+  outline: none;
+}
+.custom-classes:focus + .label-class {
+  color: #4345db;
+}
+
+.filled-input {
+  border: 1px solid #4345db;
+}
+.filled-input + .label-class {
+  color: #4345db;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+  z-index: 99;
+}

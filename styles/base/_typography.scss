@@ -1,0 +1,333 @@
+@import './variables';
+
+$font_sizes: (
+  's0': 0,
+  's8': 0.5rem,
+  's10': 0.625rem,
+  's11': 0.6875rem,
+  's12': 0.75rem,
+  's13': 0.8125rem,
+  's14': 0.875rem,
+  's15': 0.9375rem,
+  's16': 1rem,
+  's17': 1.0625rem,
+  's18': 1.125rem,
+  's19': 1.1875rem,
+  's20': 1.25rem,
+  's21': 1.3125rem,
+  's22': 1.375rem,
+  's23': 1.4375rem,
+  's24': 1.5rem,
+  's25': 1.5625rem,
+  's26': 1.625rem,
+  's27': 1.6875rem,
+  's28': 1.75rem,
+  's29': 1.8125rem,
+  's30': 1.875rem,
+  's32': 2rem,
+  's33': 2.0625rem,
+  's34': 2.125rem,
+  's35': 2.1875rem,
+  's36': 2.25rem,
+  's37': 2.3125rem,
+  's40': 2.5rem,
+  's41': 2.5625rem,
+  's43': 2.6875rem,
+  's45': 2.8125rem,
+  's46': 2.875rem,
+  's47': 2.9375rem,
+  's48': 3rem,
+  's50': 3.125rem,
+  's53': 3.3125rem,
+  's54': 3.375rem,
+  's55': 3.4375rem,
+  's56': 3.5rem,
+  's58': 3.625rem,
+  's60': 3.75rem,
+  's62': 3.875rem,
+  's64': 4rem,
+  's65': 4.0625rem,
+  's70': 4.375rem,
+  's74': 4.625rem,
+  's75': 4.6875rem,
+  's94': 5.875rem,
+  's96': 6rem,
+);
+
+@function fontsize($fs_size) {
+  @return map-get($font_sizes, $fs_size);
+}
+
+@each $fs_size, $val in $font_sizes {
+  .f-#{$fs_size} {
+    font-size: $val !important;
+  }
+}
+
+@each $fs_sm_size, $val in $font_sizes {
+  @media (max-width: 767.98px) {
+    .f-sm-#{$fs_sm_size} {
+      font-size: $val !important;
+    }
+  }
+}
+
+@each $fs_sm_size, $val in $font_sizes {
+  @media (min-width: 768px) {
+    .f-sm-only-#{$fs_sm_size} {
+      font-size: $val !important;
+    }
+  }
+}
+
+// JM color classes------
+
+h1.mainh1 {
+  font-family: $ManropeSemiBold;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  color: $gray900;
+}
+
+h1 {
+  font-family: $ManropeSemiBold;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  color: $gray900;
+}
+
+h2 {
+  font-family: $ManropeSemiBold;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+}
+
+h3 {
+  font-family: $ManropeSemiBold;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+// colors---
+
+.color-black500 {
+  color: $black500;
+}
+
+.color-black900 {
+  color: $black900;
+}
+
+.color-gray500 {
+  color: $gray500;
+}
+
+.color-gray900 {
+  color: $gray900;
+}
+
+// background-colors-----
+
+.black100-background {
+  background-color: $black100;
+}
+
+// border-radius-----
+.br-1 {
+  border-radius: 8px;
+}
+
+.br-2 {
+  border-radius: 16px;
+}
+
+// spacing----
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+.mt-32 {
+  margin-top: 32px;
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+// fonts----
+.font-weight-500 {
+  font-weight: 500 !important;
+}
+
+.font-weight-600 {
+  font-weight: 600 !important;
+}
+
+.text-xxsm {
+  font-family: $ManropeRegular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.text-xsm {
+  font-family: $ManropeMedium;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.text-sm-500 {
+  font-family: $ManropeMedium;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.text-sm-600 {
+  font-family: $ManropeSemiBold;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.text-lg-600 {
+  font-family: $ManropeSemiBold;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+}
+
+// .d-center{
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// Extendables----
+
+%text-sm-600 {
+  font-family: $ManropeSemiBold;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+%text-xsm {
+  font-family: $ManropeMedium;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.Heading-sm {
+  font-family: 'Inter SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+// .text-lg {
+//   font-family: "Inter semibold";
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 16px;
+//   line-height: 20px;
+// }
+
+.heading-lg {
+  font-family: 'Inter semibold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.Heading-lg-fs-24 {
+  font-family: 'Inter SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.text-md {
+  font-family: 'Inter semibold';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.text-sm-18lh {
+  font-family: 'Inter Regular';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.g-10 {
+  gap: 10px;
+}
+
+.w-37 {
+  width: 37% !important;
+}
+
+.Modal-Title {
+  font-family: 'Inter SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #2c3e50;
+}
+
+.text-md-Regular {
+  font-family: 'Inter Regular';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.text-lg-lh24 {
+  font-family: 'Inter Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.text-lg-Semi {
+  font-family: 'Inter Semibold';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.text-lg-lh30 {
+  font-family: 'Inter Semibold';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
