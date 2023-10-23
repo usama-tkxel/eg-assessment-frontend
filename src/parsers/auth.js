@@ -1,8 +1,7 @@
 // eslint-disable-next-line import/prefer-default-export
 export const authParser = (response = {}) => {
-  const { authorization = {}, user = {} } = response ?? {};
-  const { token = '' } = authorization;
-  const { role: { id } = {} } = user;
+  const { token = '', user = {} } = response?.data ?? {};
+
   localStorage.setItem('authToken', token);
   const DEFAULT_USER = {
     superAdmin: false,
@@ -10,18 +9,12 @@ export const authParser = (response = {}) => {
 
   const updatedUser = {
     ...DEFAULT_USER,
-    ...user,
-    authorization,
-    authenticated: true,
+    user,
+    authenticated: false,
   };
-  switch (id) {
-    case 'admin':
-      return {
-        ...updatedUser,
-        superAdmin: true,
-      };
 
-    default:
-      return DEFAULT_USER;
+  if (user.email) {
+    return { ...updatedUser, authenticated: true };
   }
+  return { ...updatedUser, ...response, message: response?.message[0] };
 };

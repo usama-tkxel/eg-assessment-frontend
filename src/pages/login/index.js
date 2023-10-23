@@ -27,9 +27,9 @@ import { loginUser } from 'src/actions/auth';
 import { useForm } from 'react-hook-form';
 
 import { validateEmail } from 'src/helpers';
-import { getAuthenticationStatus } from 'src/selectors/auth';
+import { getAuthenticationStatus, getAuthUser } from 'src/selectors/auth';
 
-import { FORGOT_PASSWORD, LOGIN, PAGE_NOT_FOUND } from 'src/constants/routes';
+import { HOME, LOGIN, PAGE_NOT_FOUND, SIGNUP } from 'src/constants/routes';
 
 export const Login = () => {
   const dispatch = useDispatch();
@@ -47,13 +47,10 @@ export const Login = () => {
   const isAuthenticated = useSelector(getAuthenticationStatus);
 
   useEffect(() => {
-    if (!isSubmitting && isAuthenticated) {
-      return navigate(LOGIN);
+    if (isAuthenticated) {
+      navigate(HOME);
     }
-    navigate(PAGE_NOT_FOUND);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isAuthenticated]);
 
   const onSubmit = (values) => {
     setError('');
@@ -66,13 +63,12 @@ export const Login = () => {
     dispatch(loginUser({ email, password }))
       .unwrap()
       .then((res) => {
-        console.log(res);
         setIsSubmitting(false);
-        navigate('/');
+        const { message = '', authenticated = false } = res;
+        return setError(message);
       })
       .catch((err) => {
         setIsSubmitting(false);
-        setError('Invalid Credentials');
       });
   };
 
@@ -148,7 +144,7 @@ export const Login = () => {
                   <HStack justify='space-between'>
                     <Checkbox defaultChecked>Remember me</Checkbox>
                     <Button variant='text' size='sm'>
-                      <Link to={FORGOT_PASSWORD}> Forgot password?</Link>
+                      <Link to={SIGNUP}> Not a member? Signup</Link>
                     </Button>
                   </HStack>
                   <Stack spacing='6'>
